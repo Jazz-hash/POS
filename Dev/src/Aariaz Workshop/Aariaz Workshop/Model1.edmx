@@ -1,0 +1,886 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="aaraiz_dbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="barcodehistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductCode" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Quantity" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeCode" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateOfJoining" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="NIC" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="900" Nullable="false" />
+          <Property Name="JobDesignation" Type="int" Nullable="false" />
+          <Property Name="Salary" Type="varchar" MaxLength="800" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="800" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="leave">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="800" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="operatingsite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Site" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="paymentorreceived">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountNumber" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Debit" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Credit" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Balance" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductCode" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="800" Nullable="false" />
+          <Property Name="Image" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="CostPrice" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="RetailPrice" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SizeSmail" Type="int" Nullable="false" />
+          <Property Name="SizeMedium" Type="int" Nullable="false" />
+          <Property Name="SizeLarge" Type="int" Nullable="false" />
+          <Property Name="SizeXl" Type="int" Nullable="false" />
+          <Property Name="Size22" Type="int" Nullable="false" />
+          <Property Name="Size24" Type="int" Nullable="false" />
+          <Property Name="Size26" Type="int" Nullable="false" />
+          <Property Name="Size28" Type="int" Nullable="false" />
+          <Property Name="Size30" Type="int" Nullable="false" />
+          <Property Name="Size32" Type="int" Nullable="false" />
+          <Property Name="Size34" Type="int" Nullable="false" />
+          <Property Name="Size36" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+          <Property Name="SalesPercentage_id" Type="int" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="receipt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OperatingSite_id" Type="int" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sales">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="salespercentage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Percentage" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ContactNumber" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ShopUser_id" Type="int" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shopuser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Shop_id" Type="int" Nullable="false" />
+          <Property Name="UserShop_id" Type="int" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stockdata">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="TradingCompany_id" Type="int" Nullable="false" />
+          <Property Name="OperatingSite_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stockdiscrepancy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Shop_id" Type="int" Nullable="false" />
+          <Property Name="Product_id" Type="int" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="supplier_customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountNumber" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CompanyNTN" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CustomerCode" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CreditLimit" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tradingcompany">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="transferstock">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventNumber" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Date" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="Warehouse_id" Type="int" Nullable="false" />
+          <Property Name="Shop_id" Type="int" Nullable="false" />
+          <Property Name="Product_id" Type="int" Nullable="false" />
+          <Property Name="ProductQuantity" Type="int" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="OperatingSite_id" Type="int" Nullable="false" />
+          <Property Name="TradingCompany_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+          <Property Name="Image" Type="blob" Nullable="false" />
+        </EntityType>
+        <EntityType Name="warehouse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+        </EntityType>
+        <Association Name="product_ibfk_1">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="product_ibfk_2">
+          <End Role="salespercentage" Type="Self.salespercentage" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="salespercentage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="SalesPercentage_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="user_ibfk_1">
+          <End Role="operatingsite" Type="Self.operatingsite" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="operatingsite">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="OperatingSite_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="user_ibfk_2">
+          <End Role="tradingcompany" Type="Self.tradingcompany" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tradingcompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="TradingCompany_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="aaraiz_dbModelStoreContainer">
+          <EntitySet Name="barcodehistory" EntityType="Self.barcodehistory" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="employee" EntityType="Self.employee" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="leave" EntityType="Self.leave" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="operatingsite" EntityType="Self.operatingsite" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="paymentorreceived" EntityType="Self.paymentorreceived" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="receipt" EntityType="Self.receipt" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="sales" EntityType="Self.sales" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="salespercentage" EntityType="Self.salespercentage" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="shop" EntityType="Self.shop" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="shopuser" EntityType="Self.shopuser" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="stockdata" EntityType="Self.stockdata" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="stockdiscrepancy" EntityType="Self.stockdiscrepancy" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="supplier_customer" EntityType="Self.supplier_customer" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="tradingcompany" EntityType="Self.tradingcompany" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="transferstock" EntityType="Self.transferstock" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="aaraiz_db" store:Type="Tables" />
+          <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="aaraiz_db" store:Type="Tables" />
+          <AssociationSet Name="product_ibfk_1" Association="Self.product_ibfk_1">
+            <End Role="user" EntitySet="user" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="product_ibfk_2" Association="Self.product_ibfk_2">
+            <End Role="salespercentage" EntitySet="salespercentage" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="user_ibfk_1" Association="Self.user_ibfk_1">
+            <End Role="operatingsite" EntitySet="operatingsite" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="user_ibfk_2" Association="Self.user_ibfk_2">
+            <End Role="tradingcompany" EntitySet="tradingcompany" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="aaraiz_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="barcodehistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Quantity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateOfJoining" Type="DateTime" Nullable="false" />
+          <Property Name="NIC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="JobDesignation" Type="Int32" Nullable="false" />
+          <Property Name="Salary" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="leave">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="operatingsite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Site" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="aaraiz_dbModel.user_ibfk_1" FromRole="operatingsite" ToRole="user" />
+        </EntityType>
+        <EntityType Name="paymentorreceived">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Debit" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Credit" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Balance" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductCode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Image" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="CostPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RetailPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SizeSmail" Type="Int32" Nullable="false" />
+          <Property Name="SizeMedium" Type="Int32" Nullable="false" />
+          <Property Name="SizeLarge" Type="Int32" Nullable="false" />
+          <Property Name="SizeXl" Type="Int32" Nullable="false" />
+          <Property Name="Size22" Type="Int32" Nullable="false" />
+          <Property Name="Size24" Type="Int32" Nullable="false" />
+          <Property Name="Size26" Type="Int32" Nullable="false" />
+          <Property Name="Size28" Type="Int32" Nullable="false" />
+          <Property Name="Size30" Type="Int32" Nullable="false" />
+          <Property Name="Size32" Type="Int32" Nullable="false" />
+          <Property Name="Size34" Type="Int32" Nullable="false" />
+          <Property Name="Size36" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="SalesPercentage_id" Type="Int32" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="user" Relationship="aaraiz_dbModel.product_ibfk_1" FromRole="product" ToRole="user" />
+          <NavigationProperty Name="salespercentage" Relationship="aaraiz_dbModel.product_ibfk_2" FromRole="product" ToRole="salespercentage" />
+        </EntityType>
+        <EntityType Name="receipt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OperatingSite_id" Type="Int32" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="salespercentage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Percentage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="products" Relationship="aaraiz_dbModel.product_ibfk_2" FromRole="salespercentage" ToRole="product" />
+        </EntityType>
+        <EntityType Name="shop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ContactNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ShopUser_id" Type="Int32" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shopuser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Shop_id" Type="Int32" Nullable="false" />
+          <Property Name="UserShop_id" Type="Int32" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stockdata">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="TradingCompany_id" Type="Int32" Nullable="false" />
+          <Property Name="OperatingSite_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stockdiscrepancy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Shop_id" Type="Int32" Nullable="false" />
+          <Property Name="Product_id" Type="Int32" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="supplier_customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyNTN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CustomerCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreditLimit" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tradingcompany">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="aaraiz_dbModel.user_ibfk_2" FromRole="tradingcompany" ToRole="user" />
+        </EntityType>
+        <EntityType Name="transferstock">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="Warehouse_id" Type="Int32" Nullable="false" />
+          <Property Name="Shop_id" Type="Int32" Nullable="false" />
+          <Property Name="Product_id" Type="Int32" Nullable="false" />
+          <Property Name="ProductQuantity" Type="Int32" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="warehouse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="aaraiz_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="barcodehistories" EntityType="Self.barcodehistory" />
+          <EntitySet Name="employees" EntityType="Self.employee" />
+          <EntitySet Name="leaves" EntityType="Self.leave" />
+          <EntitySet Name="operatingsites" EntityType="Self.operatingsite" />
+          <EntitySet Name="paymentorreceiveds" EntityType="Self.paymentorreceived" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="receipts" EntityType="Self.receipt" />
+          <EntitySet Name="sales" EntityType="Self.sale" />
+          <EntitySet Name="salespercentages" EntityType="Self.salespercentage" />
+          <EntitySet Name="shops" EntityType="Self.shop" />
+          <EntitySet Name="shopusers" EntityType="Self.shopuser" />
+          <EntitySet Name="stockdatas" EntityType="Self.stockdata" />
+          <EntitySet Name="stockdiscrepancies" EntityType="Self.stockdiscrepancy" />
+          <EntitySet Name="supplier_customer" EntityType="Self.supplier_customer" />
+          <EntitySet Name="tradingcompanies" EntityType="Self.tradingcompany" />
+          <EntitySet Name="transferstocks" EntityType="Self.transferstock" />
+          <EntitySet Name="warehouses" EntityType="Self.warehouse" />
+          <EntitySet Name="users" EntityType="aaraiz_dbModel.user" />
+          <AssociationSet Name="user_ibfk_1" Association="aaraiz_dbModel.user_ibfk_1">
+            <End Role="operatingsite" EntitySet="operatingsites" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="user_ibfk_2" Association="aaraiz_dbModel.user_ibfk_2">
+            <End Role="tradingcompany" EntitySet="tradingcompanies" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="product_ibfk_1" Association="aaraiz_dbModel.product_ibfk_1">
+            <End Role="user" EntitySet="users" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="product_ibfk_2" Association="aaraiz_dbModel.product_ibfk_2">
+            <End Role="salespercentage" EntitySet="salespercentages" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Role" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OperatingSite_id" Type="Int32" Nullable="false" />
+          <Property Name="TradingCompany_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Image" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="operatingsite" Relationship="aaraiz_dbModel.user_ibfk_1" FromRole="user" ToRole="operatingsite" />
+          <NavigationProperty Name="tradingcompany" Relationship="aaraiz_dbModel.user_ibfk_2" FromRole="user" ToRole="tradingcompany" />
+          <NavigationProperty Name="products" Relationship="aaraiz_dbModel.product_ibfk_1" FromRole="user" ToRole="product" />
+        </EntityType>
+        <Association Name="user_ibfk_1">
+          <End Type="aaraiz_dbModel.operatingsite" Role="operatingsite" Multiplicity="1" />
+          <End Type="aaraiz_dbModel.user" Role="user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="operatingsite">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="OperatingSite_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="user_ibfk_2">
+          <End Type="aaraiz_dbModel.tradingcompany" Role="tradingcompany" Multiplicity="1" />
+          <End Type="aaraiz_dbModel.user" Role="user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tradingcompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="TradingCompany_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="product_ibfk_1">
+          <End Type="aaraiz_dbModel.user" Role="user" Multiplicity="1" />
+          <End Type="aaraiz_dbModel.product" Role="product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="product_ibfk_2">
+          <End Type="aaraiz_dbModel.salespercentage" Role="salespercentage" Multiplicity="1" />
+          <End Type="aaraiz_dbModel.product" Role="product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="salespercentage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="SalesPercentage_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="aaraiz_dbModelStoreContainer" CdmEntityContainer="aaraiz_dbEntities">
+          <EntitySetMapping Name="barcodehistories">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.barcodehistory">
+              <MappingFragment StoreEntitySet="barcodehistory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employees">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.employee">
+              <MappingFragment StoreEntitySet="employee">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DateOfJoining" ColumnName="DateOfJoining" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="JobDesignation" ColumnName="JobDesignation" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="leaves">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.leave">
+              <MappingFragment StoreEntitySet="leave">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="operatingsites">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.operatingsite">
+              <MappingFragment StoreEntitySet="operatingsite">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="paymentorreceiveds">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.paymentorreceived">
+              <MappingFragment StoreEntitySet="paymentorreceived">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
+                <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+                <ScalarProperty Name="SizeSmail" ColumnName="SizeSmail" />
+                <ScalarProperty Name="SizeMedium" ColumnName="SizeMedium" />
+                <ScalarProperty Name="SizeLarge" ColumnName="SizeLarge" />
+                <ScalarProperty Name="SizeXl" ColumnName="SizeXl" />
+                <ScalarProperty Name="Size22" ColumnName="Size22" />
+                <ScalarProperty Name="Size24" ColumnName="Size24" />
+                <ScalarProperty Name="Size26" ColumnName="Size26" />
+                <ScalarProperty Name="Size28" ColumnName="Size28" />
+                <ScalarProperty Name="Size30" ColumnName="Size30" />
+                <ScalarProperty Name="Size32" ColumnName="Size32" />
+                <ScalarProperty Name="Size34" ColumnName="Size34" />
+                <ScalarProperty Name="Size36" ColumnName="Size36" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SalesPercentage_id" ColumnName="SalesPercentage_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="receipts">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.receipt">
+              <MappingFragment StoreEntitySet="receipt">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OperatingSite_id" ColumnName="OperatingSite_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sales">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.sale">
+              <MappingFragment StoreEntitySet="sales">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="salespercentages">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.salespercentage">
+              <MappingFragment StoreEntitySet="salespercentage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shops">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.shop">
+              <MappingFragment StoreEntitySet="shop">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="ShopUser_id" ColumnName="ShopUser_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shopusers">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.shopuser">
+              <MappingFragment StoreEntitySet="shopuser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Shop_id" ColumnName="Shop_id" />
+                <ScalarProperty Name="UserShop_id" ColumnName="UserShop_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stockdatas">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.stockdata">
+              <MappingFragment StoreEntitySet="stockdata">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="TradingCompany_id" ColumnName="TradingCompany_id" />
+                <ScalarProperty Name="OperatingSite_id" ColumnName="OperatingSite_id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stockdiscrepancies">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.stockdiscrepancy">
+              <MappingFragment StoreEntitySet="stockdiscrepancy">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Shop_id" ColumnName="Shop_id" />
+                <ScalarProperty Name="Product_id" ColumnName="Product_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="supplier_customer">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.supplier_customer">
+              <MappingFragment StoreEntitySet="supplier_customer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="CompanyNTN" ColumnName="CompanyNTN" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tradingcompanies">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.tradingcompany">
+              <MappingFragment StoreEntitySet="tradingcompany">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transferstocks">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.transferstock">
+              <MappingFragment StoreEntitySet="transferstock">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EventNumber" ColumnName="EventNumber" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Warehouse_id" ColumnName="Warehouse_id" />
+                <ScalarProperty Name="Shop_id" ColumnName="Shop_id" />
+                <ScalarProperty Name="Product_id" ColumnName="Product_id" />
+                <ScalarProperty Name="ProductQuantity" ColumnName="ProductQuantity" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="warehouses">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.warehouse">
+              <MappingFragment StoreEntitySet="warehouse">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="aaraiz_dbModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TradingCompany_id" ColumnName="TradingCompany_id" />
+                <ScalarProperty Name="OperatingSite_id" ColumnName="OperatingSite_id" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

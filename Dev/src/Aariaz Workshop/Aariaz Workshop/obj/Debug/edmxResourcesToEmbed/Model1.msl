@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="aaraiz_dbModelStoreContainer" CdmEntityContainer="aaraiz_dbEntities">
+    <EntitySetMapping Name="barcodehistories">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.barcodehistory">
+        <MappingFragment StoreEntitySet="barcodehistory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employees">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.employee">
+        <MappingFragment StoreEntitySet="employee">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DateOfJoining" ColumnName="DateOfJoining" />
+          <ScalarProperty Name="NIC" ColumnName="NIC" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="JobDesignation" ColumnName="JobDesignation" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="leaves">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.leave">
+        <MappingFragment StoreEntitySet="leave">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="operatingsites">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.operatingsite">
+        <MappingFragment StoreEntitySet="operatingsite">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Site" ColumnName="Site" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="paymentorreceiveds">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.paymentorreceived">
+        <MappingFragment StoreEntitySet="paymentorreceived">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
+          <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+          <ScalarProperty Name="SizeSmail" ColumnName="SizeSmail" />
+          <ScalarProperty Name="SizeMedium" ColumnName="SizeMedium" />
+          <ScalarProperty Name="SizeLarge" ColumnName="SizeLarge" />
+          <ScalarProperty Name="SizeXl" ColumnName="SizeXl" />
+          <ScalarProperty Name="Size22" ColumnName="Size22" />
+          <ScalarProperty Name="Size24" ColumnName="Size24" />
+          <ScalarProperty Name="Size26" ColumnName="Size26" />
+          <ScalarProperty Name="Size28" ColumnName="Size28" />
+          <ScalarProperty Name="Size30" ColumnName="Size30" />
+          <ScalarProperty Name="Size32" ColumnName="Size32" />
+          <ScalarProperty Name="Size34" ColumnName="Size34" />
+          <ScalarProperty Name="Size36" ColumnName="Size36" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SalesPercentage_id" ColumnName="SalesPercentage_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="receipts">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.receipt">
+        <MappingFragment StoreEntitySet="receipt">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OperatingSite_id" ColumnName="OperatingSite_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sales">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.sale">
+        <MappingFragment StoreEntitySet="sales">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="salespercentages">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.salespercentage">
+        <MappingFragment StoreEntitySet="salespercentage">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shops">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.shop">
+        <MappingFragment StoreEntitySet="shop">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="ShopUser_id" ColumnName="ShopUser_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shopusers">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.shopuser">
+        <MappingFragment StoreEntitySet="shopuser">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Shop_id" ColumnName="Shop_id" />
+          <ScalarProperty Name="UserShop_id" ColumnName="UserShop_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stockdatas">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.stockdata">
+        <MappingFragment StoreEntitySet="stockdata">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="TradingCompany_id" ColumnName="TradingCompany_id" />
+          <ScalarProperty Name="OperatingSite_id" ColumnName="OperatingSite_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stockdiscrepancies">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.stockdiscrepancy">
+        <MappingFragment StoreEntitySet="stockdiscrepancy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Shop_id" ColumnName="Shop_id" />
+          <ScalarProperty Name="Product_id" ColumnName="Product_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="supplier_customer">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.supplier_customer">
+        <MappingFragment StoreEntitySet="supplier_customer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="CompanyNTN" ColumnName="CompanyNTN" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tradingcompanies">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.tradingcompany">
+        <MappingFragment StoreEntitySet="tradingcompany">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transferstocks">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.transferstock">
+        <MappingFragment StoreEntitySet="transferstock">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EventNumber" ColumnName="EventNumber" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Warehouse_id" ColumnName="Warehouse_id" />
+          <ScalarProperty Name="Shop_id" ColumnName="Shop_id" />
+          <ScalarProperty Name="Product_id" ColumnName="Product_id" />
+          <ScalarProperty Name="ProductQuantity" ColumnName="ProductQuantity" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="warehouses">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.warehouse">
+        <MappingFragment StoreEntitySet="warehouse">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="aaraiz_dbModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TradingCompany_id" ColumnName="TradingCompany_id" />
+          <ScalarProperty Name="OperatingSite_id" ColumnName="OperatingSite_id" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

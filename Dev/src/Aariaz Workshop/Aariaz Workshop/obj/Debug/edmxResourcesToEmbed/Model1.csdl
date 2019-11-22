@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="aaraiz_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="barcodehistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Quantity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateOfJoining" Type="DateTime" Nullable="false" />
+    <Property Name="NIC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="JobDesignation" Type="Int32" Nullable="false" />
+    <Property Name="Salary" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="leave">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="operatingsite">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Site" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="users" Relationship="aaraiz_dbModel.user_ibfk_1" FromRole="operatingsite" ToRole="user" />
+  </EntityType>
+  <EntityType Name="paymentorreceived">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Debit" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Credit" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Balance" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Image" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="CostPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RetailPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SizeSmail" Type="Int32" Nullable="false" />
+    <Property Name="SizeMedium" Type="Int32" Nullable="false" />
+    <Property Name="SizeLarge" Type="Int32" Nullable="false" />
+    <Property Name="SizeXl" Type="Int32" Nullable="false" />
+    <Property Name="Size22" Type="Int32" Nullable="false" />
+    <Property Name="Size24" Type="Int32" Nullable="false" />
+    <Property Name="Size26" Type="Int32" Nullable="false" />
+    <Property Name="Size28" Type="Int32" Nullable="false" />
+    <Property Name="Size30" Type="Int32" Nullable="false" />
+    <Property Name="Size32" Type="Int32" Nullable="false" />
+    <Property Name="Size34" Type="Int32" Nullable="false" />
+    <Property Name="Size36" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="SalesPercentage_id" Type="Int32" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="aaraiz_dbModel.product_ibfk_1" FromRole="product" ToRole="user" />
+    <NavigationProperty Name="salespercentage" Relationship="aaraiz_dbModel.product_ibfk_2" FromRole="product" ToRole="salespercentage" />
+  </EntityType>
+  <EntityType Name="receipt">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OperatingSite_id" Type="Int32" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sale">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="salespercentage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Percentage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="products" Relationship="aaraiz_dbModel.product_ibfk_2" FromRole="salespercentage" ToRole="product" />
+  </EntityType>
+  <EntityType Name="shop">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ContactNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopUser_id" Type="Int32" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="shopuser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Shop_id" Type="Int32" Nullable="false" />
+    <Property Name="UserShop_id" Type="Int32" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="stockdata">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="TradingCompany_id" Type="Int32" Nullable="false" />
+    <Property Name="OperatingSite_id" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="stockdiscrepancy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Shop_id" Type="Int32" Nullable="false" />
+    <Property Name="Product_id" Type="Int32" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="supplier_customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyNTN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CustomerCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreditLimit" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tradingcompany">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="users" Relationship="aaraiz_dbModel.user_ibfk_2" FromRole="tradingcompany" ToRole="user" />
+  </EntityType>
+  <EntityType Name="transferstock">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Warehouse_id" Type="Int32" Nullable="false" />
+    <Property Name="Shop_id" Type="Int32" Nullable="false" />
+    <Property Name="Product_id" Type="Int32" Nullable="false" />
+    <Property Name="ProductQuantity" Type="Int32" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="warehouse">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="aaraiz_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="barcodehistories" EntityType="Self.barcodehistory" />
+    <EntitySet Name="employees" EntityType="Self.employee" />
+    <EntitySet Name="leaves" EntityType="Self.leave" />
+    <EntitySet Name="operatingsites" EntityType="Self.operatingsite" />
+    <EntitySet Name="paymentorreceiveds" EntityType="Self.paymentorreceived" />
+    <EntitySet Name="products" EntityType="Self.product" />
+    <EntitySet Name="receipts" EntityType="Self.receipt" />
+    <EntitySet Name="sales" EntityType="Self.sale" />
+    <EntitySet Name="salespercentages" EntityType="Self.salespercentage" />
+    <EntitySet Name="shops" EntityType="Self.shop" />
+    <EntitySet Name="shopusers" EntityType="Self.shopuser" />
+    <EntitySet Name="stockdatas" EntityType="Self.stockdata" />
+    <EntitySet Name="stockdiscrepancies" EntityType="Self.stockdiscrepancy" />
+    <EntitySet Name="supplier_customer" EntityType="Self.supplier_customer" />
+    <EntitySet Name="tradingcompanies" EntityType="Self.tradingcompany" />
+    <EntitySet Name="transferstocks" EntityType="Self.transferstock" />
+    <EntitySet Name="warehouses" EntityType="Self.warehouse" />
+    <EntitySet Name="users" EntityType="aaraiz_dbModel.user" />
+    <AssociationSet Name="user_ibfk_1" Association="aaraiz_dbModel.user_ibfk_1">
+      <End Role="operatingsite" EntitySet="operatingsites" />
+      <End Role="user" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="user_ibfk_2" Association="aaraiz_dbModel.user_ibfk_2">
+      <End Role="tradingcompany" EntitySet="tradingcompanies" />
+      <End Role="user" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="product_ibfk_1" Association="aaraiz_dbModel.product_ibfk_1">
+      <End Role="user" EntitySet="users" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="product_ibfk_2" Association="aaraiz_dbModel.product_ibfk_2">
+      <End Role="salespercentage" EntitySet="salespercentages" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OperatingSite_id" Type="Int32" Nullable="false" />
+    <Property Name="TradingCompany_id" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="Image" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="operatingsite" Relationship="aaraiz_dbModel.user_ibfk_1" FromRole="user" ToRole="operatingsite" />
+    <NavigationProperty Name="tradingcompany" Relationship="aaraiz_dbModel.user_ibfk_2" FromRole="user" ToRole="tradingcompany" />
+    <NavigationProperty Name="products" Relationship="aaraiz_dbModel.product_ibfk_1" FromRole="user" ToRole="product" />
+  </EntityType>
+  <Association Name="user_ibfk_1">
+    <End Type="aaraiz_dbModel.operatingsite" Role="operatingsite" Multiplicity="1" />
+    <End Type="aaraiz_dbModel.user" Role="user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="operatingsite">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="OperatingSite_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="user_ibfk_2">
+    <End Type="aaraiz_dbModel.tradingcompany" Role="tradingcompany" Multiplicity="1" />
+    <End Type="aaraiz_dbModel.user" Role="user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tradingcompany">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="TradingCompany_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="product_ibfk_1">
+    <End Type="aaraiz_dbModel.user" Role="user" Multiplicity="1" />
+    <End Type="aaraiz_dbModel.product" Role="product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="User_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="product_ibfk_2">
+    <End Type="aaraiz_dbModel.salespercentage" Role="salespercentage" Multiplicity="1" />
+    <End Type="aaraiz_dbModel.product" Role="product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="salespercentage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="SalesPercentage_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
